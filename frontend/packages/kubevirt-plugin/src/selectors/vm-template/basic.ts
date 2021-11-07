@@ -1,5 +1,6 @@
 import { TFunction } from 'i18next';
 
+import { isUpstream } from '@console/internal/components/utils';
 import { TemplateKind } from '@console/internal/module/k8s';
 import { ANNOTATIONS } from '@console/shared/src/constants/common';
 
@@ -19,7 +20,6 @@ import { VirtualMachineModel } from '../../models';
 import { TemplateItem } from '../../types/template';
 import { VMKind } from '../../types/vm';
 import { getAnnotation } from '../selectors';
-import { isUpstream } from '../../utils/common';
 
 export const selectVM = (vmTemplate: TemplateKind): VMKind =>
   vmTemplate && vmTemplate.objects

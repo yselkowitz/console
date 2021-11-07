@@ -1,7 +1,7 @@
+import { isUpstream } from '@console/internal/components/utils';
 import { TemplateKind } from '@console/internal/module/k8s';
 import { getName } from '@console/shared/src';
 import { ObjectEnum } from '@console/shared/src/constants/object-enum';
-import { isUpstream } from '../../utils/common';
 
 export class OSSelection extends ObjectEnum<string> {
   static readonly FEDORA = new OSSelection(
