@@ -32,7 +32,7 @@ spec:
 
           Do you see the completed application and build?
         failedTaskHelp:
-          This task isn’t verified yet. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/serverless/serving-creating-managing-apps.html#creating-serverless-applications-using-the-openshift-container-platform-web-console)
+          This task isn’t verified yet. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/serverless/knative-serving#creating-serverless-applications-using-the-developer-perspective)
           about this topic.
       summary:
         success: You just created a Serverless app!
@@ -54,7 +54,7 @@ spec:
 
           Is the Pod ring autoscaled to zero?
         failedTaskHelp:
-          This task isn’t verified yet. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-viewing-application-composition-using-topology-view.html#odc-scaling-application-pods-and-checking-builds-and-routes_viewing-application-composition-using-topology-view)
+          This task isn’t verified yet. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/applications/application-life-cycle-management#odc-scaling-application-pods-and-checking-builds-and-routes_viewing-application-composition-using-topology-view)
           about this topic.
       summary:
         success: You just scaled up your application to accomodate a traffic request!
@@ -78,7 +78,7 @@ spec:
 
           Do you see a PingSource connected by a gray line to the side of your application?
         failedTaskHelp:
-          This task isn’t verified yet. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/serverless/event_sources/knative-event-sources.html)
+          This task isn’t verified yet. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/serverless/event-sources#knative-event-sources)
           about this topic.
       summary:
         success: You just wired an Event Source to your Knative Service!
@@ -111,7 +111,7 @@ spec:
 
           Do you see two revisions in your Knative Service?
         failedTaskHelp:
-          This task isn’t verified yet. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/serverless/knative_serving/splitting-traffic-between-revisions.html)
+          This task isn’t verified yet. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/serverless/knative-serving#odc-splitting-traffic-between-revisions-using-developer-perspective_serverless-traffic-management)
           about this topic.
       summary:
         success: You just set a traffic distribution for your Serverless app!
@@ -132,7 +132,7 @@ spec:
 
           Has the Sample Serverless App been removed?
         failedTaskHelp:
-          This task is not verified yet. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-deleting-applications.html)
+          This task is not verified yet. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/applications/application-life-cycle-management#odc-deleting-applications)
           about this topic.
       summary:
         success: You just deleted your Serverless app!
