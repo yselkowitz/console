@@ -9,6 +9,7 @@ import {
   ExternalLink,
   Firehose,
   history,
+  isUpstream,
   NsDropdown,
   openshiftHelpBase,
   BreadCrumbs,
@@ -438,6 +439,10 @@ export const OperatorHubSubscribeForm: React.FC<OperatorHubSubscribeFormProps> =
   const showMonitoringCheckbox =
     operatorRequestsMonitoring && _.startsWith(selectedTargetNamespace, 'openshift-');
 
+  const monitoringLink = isUpstream()
+    ? `${openshiftHelpBase}monitoring/configuring-the-monitoring-stack.html#maintenance-and-support_configuring-monitoring`
+    : `${openshiftHelpBase}html/monitoring/configuring-the-monitoring-stack#maintenance-and-support_configuring-the-monitoring-stack`;
+
   const suggestedNamespaceDetails = isSuggestedNamespaceSelected && (
     <>
       <Alert
@@ -480,12 +485,7 @@ export const OperatorHubSubscribeForm: React.FC<OperatorHubSubscribeFormProps> =
                 enabling monitoring voids user support. Enabling cluster monitoring for non Red Hat
                 operators can lead to malicious metrics data overriding existing cluster metrics.
                 For more information, see the{' '}
-                <ExternalLink
-                  href={`${openshiftHelpBase}monitoring/configuring-the-monitoring-stack.html#maintenance-and-support_configuring-monitoring`}
-                >
-                  cluster monitoring documentation
-                </ExternalLink>
-                .
+                <ExternalLink href={monitoringLink}>cluster monitoring documentation</ExternalLink>.
               </Trans>
             </Alert>
           )}
