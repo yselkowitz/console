@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import {
   LoadingBox,
+  isUpstream,
   openshiftHelpBase,
   PageHeading,
   ExternalLink,
@@ -38,6 +39,10 @@ const ProjectAccess: React.FC<ProjectAccessProps> = ({ formName, namespace, role
   const filteredRoleBindings = filterRoleBindings(roleBindings.data, Roles);
 
   const userRoleBindings: UserRoleBinding[] = getUserRoleBindings(filteredRoleBindings);
+
+  const rbacLink = isUpstream()
+    ? `${openshiftHelpBase}authentication/using-rbac.html`
+    : `${openshiftHelpBase}html/authentication_and_authorization/using-rbac`;
 
   const initialValues = {
     projectAccess: roleBindings.loaded && userRoleBindings,
@@ -110,11 +115,7 @@ const ProjectAccess: React.FC<ProjectAccessProps> = ({ formName, namespace, role
         <Link to={`/k8s/ns/${getActiveNamespace()}/${RoleModel.plural}`}>Roles</Link> and{' '}
         <Link to={`/k8s/ns/${getActiveNamespace()}/${RoleBindingModel.plural}`}>Role Bindings</Link>
         . For more information, see the{' '}
-        <ExternalLink
-          href={`${openshiftHelpBase}authentication/using-rbac.html`}
-          text="role-based access control documentation"
-        />{' '}
-        .
+        <ExternalLink href={rbacLink} text="role-based access control documentation" /> .
       </PageHeading>
       <div className="co-m-pane__body">
         {roleBindings.loadError ? (
