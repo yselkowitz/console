@@ -19,8 +19,7 @@ export const CLOUD_INIT_MISSING_USERNAME =
   'No username set, see operating system documentation for the default username.';
 export const CLOUD_INIT_DOC_LINK = 'https://cloudinit.readthedocs.io/en/latest/index.html';
 export const STORAGE_CLASS_SUPPORTED_MATRIX_DOC_LINK =
-  'https://docs.openshift.com/container-platform/4.6/virt/virtual_machines/virtual_disks/virt-features-for-storage.html';
-
+  'https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/openshift_virtualization/virtual-machines#virt-features-for-storage';
 export const getDialogUIError = (hasAllRequiredFilled, t: TFunction) =>
   hasAllRequiredFilled
     ? t('kubevirt-plugin~Please correct the invalid fields.')

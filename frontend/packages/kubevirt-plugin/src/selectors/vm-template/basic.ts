@@ -1,4 +1,5 @@
 import { TFunction } from 'i18next';
+import { isUpstream } from '@console/internal/components/utils';
 import { TemplateKind } from '@console/internal/module/k8s';
 import { ANNOTATIONS } from '@console/shared/src/constants/common';
 import { VMKind } from '../../types/vm';
@@ -42,7 +43,6 @@ export const getTemplateSupport = (
     parentURL: undefined,
   };
 
-  const isUpstream = window.SERVER_FLAGS.branding === 'okd';
   if (isUpstream) {
     return support;
   }
@@ -64,7 +64,6 @@ export const getTemplateProvider = (
 ): string => {
   let provider = getAnnotation(template, TEMPLATE_PROVIDER_ANNOTATION);
   if (!provider && isCommonTemplate(template)) {
-    const isUpstream = window.SERVER_FLAGS.branding === 'okd';
     provider = isUpstream ? 'KubeVirt' : 'Red Hat';
   }
   if (provider) {
@@ -79,7 +78,6 @@ export const getTemplateParentProvider = (template: TemplateKind): string =>
   getAnnotation(template, TEMPLATE_PARENT_PROVIDER_ANNOTATION);
 
 export const templateProviders = (t: TFunction): { id: ProvidedType; title: string }[] => {
-  const isUpstream = window.SERVER_FLAGS.branding === 'okd';
   const providers: { id: ProvidedType; title: string }[] = [
     { id: 'user-supported', title: t('kubevirt-plugin~User Supported') },
     {
