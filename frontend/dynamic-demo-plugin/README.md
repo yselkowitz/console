@@ -42,7 +42,7 @@ oc apply -f oc-manifest.yaml
 ```
 
 Note that the `Service` exposing the HTTP server is annotated to have a signed
-[service serving certificate](https://docs.openshift.com/container-platform/4.6/security/certificates/service-serving-certificate.html)
+[service serving certificate](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/security_and_compliance/configuring-certificates#add-service-serving)
 generated and mounted into the image. This allows us to run the server with HTTP/TLS enabled, using
 a trusted CA certificate.
 
