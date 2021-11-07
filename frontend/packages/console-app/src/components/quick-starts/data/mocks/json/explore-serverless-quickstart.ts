@@ -36,7 +36,7 @@ Adding OpenShift Serverless to your OpenShift Container Platform cluster is quic
           instructions: `#### To verify that the OpenShift Serverless Operator is installed:
 
 In the Status column of the **Installed Operators** page, is the OpenShift Serverless Operator’s status **Succeeded?**`,
-          failedTaskHelp: `This task is incomplete. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/serverless/installing_serverless/installing-openshift-serverless.html) about this topic.`,
+          failedTaskHelp: `This task is incomplete. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.8/html/serverless/administration-guide#install-serverless-operator) about this topic.`,
         },
 
         summary: {
@@ -64,7 +64,7 @@ Go to the **All Instances** tab of the OpenShift Serverless Operator.
 
 Are the Knative Serving and Knative Eventing resources in the list of instances?
 `,
-          failedTaskHelp: `This task isn’t verified yet. Try the task again, or [read more](https://docs.openshift.com/container-platform/4.6/serverless/installing_serverless/installing-knative-serving.html#serverless-create-serving-project-web-console_installing-knative-serving) about this topic.`,
+          failedTaskHelp: `This task isn’t verified yet. Try the task again, or [read more](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.8/html/serverless/administration-guide#installing-knative-serving) about this topic.`,
         },
         summary: {
           success: `You just created instances of the Knative Service and Knative Eventing resources.`,
