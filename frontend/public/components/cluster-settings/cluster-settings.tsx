@@ -72,6 +72,7 @@ import {
   Firehose,
   FirehoseResource,
   HorizontalNav,
+  isUpstream,
   openshiftHelpBase,
   ResourceLink,
   resourcePathFromModel,
@@ -379,10 +380,13 @@ export const CurrentVersionHeader: React.FC<CurrentVersionProps> = ({ cv }) => {
 };
 
 export const ChannelDocLink: React.FC<{}> = () => {
+  const upgradeLink = isUpstream()
+    ? `${openshiftHelpBase}updating/updating-cluster-between-minor.html#understanding-upgrade-channels_updating-cluster-between-minor`
+    : `${openshiftHelpBase}html/updating_clusters/updating-cluster-between-minor#understanding-upgrade-channels_updating-cluster-between-minor`;
   const { t } = useTranslation();
   return (
     <ExternalLink
-      href={`${openshiftHelpBase}updating/updating-cluster-between-minor.html#understanding-upgrade-channels_updating-cluster-between-minor`}
+      href={upgradeLink}
       text={t('cluster-settings~Learn more about OpenShift update channels')}
     />
   );
