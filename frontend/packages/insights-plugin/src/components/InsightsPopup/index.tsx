@@ -12,7 +12,7 @@ import {
 } from './mappers';
 import { PrometheusHealthPopupProps } from '@console/plugin-sdk';
 import { K8sResourceKind } from '@console/internal/module/k8s';
-import { ExternalLink, openshiftHelpBase } from '@console/internal/components/utils';
+import { ExternalLink, isUpstream, openshiftHelpBase } from '@console/internal/components/utils';
 import './style.scss';
 
 const DataComponent: React.FC<DataComponentProps> = ({ x, y, datum }) => {
@@ -30,6 +30,10 @@ export const InsightsPopup: React.FC<PrometheusHealthPopupProps> = ({ responses,
 
   const isWaitingOrDisabled = _isWaitingOrDisabled(metrics);
   const isError = _isError(metrics);
+
+  const insightsLink = isUpstream()
+    ? `${openshiftHelpBase}support/remote_health_monitoring/using-insights-to-identify-issues-with-your-cluster.html`
+    : `${openshiftHelpBase}html/support/remote-health-monitoring-with-connected-clusters#using-insights-to-identify-issues-with-your-cluster`;
 
   return (
     <div className="co-insights__box">
@@ -91,10 +95,7 @@ export const InsightsPopup: React.FC<PrometheusHealthPopupProps> = ({ responses,
           </>
         )}
         {(isWaitingOrDisabled || isError) && (
-          <ExternalLink
-            href={`${openshiftHelpBase}support/remote_health_monitoring/using-insights-to-identify-issues-with-your-cluster.html`}
-            text="More about Insights"
-          />
+          <ExternalLink href={insightsLink} text="More about Insights" />
         )}
       </div>
     </div>
